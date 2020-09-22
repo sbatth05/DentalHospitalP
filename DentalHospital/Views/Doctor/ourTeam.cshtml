@@ -1,0 +1,24 @@
+﻿@model IEnumerable<DentalHospital.Models.Doctor_Table>
+
+@{
+    ViewBag.Title = "ourTeam";
+}
+
+
+<h2 align="center">our Team Member </h2>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <img src="https://image.freepik.com/free-photo/portrait-beautiful-young-asian-doctor-woman-with-mask_74190-10511.jpg" class="img-thumbnail"/><br/>
+               <h1>  @Html.DisplayFor(modelItem => item.Name)</h1>
+               <h3>@Html.DisplayFor(modelItem => item.Specialist)</h3>
+
+            </div>
+        }
+
+        </div>
+</div>
+
+

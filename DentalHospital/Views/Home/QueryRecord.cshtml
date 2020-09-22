@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DentalHospital.Models.Contact_Table>
+
+@{
+    ViewBag.Title = "QueryRecord";
+}
+
+<h2>All Query Record</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>Delete</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            <span  class="btn btn-warning">
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </span>
+        </td>
+    </tr>
+}
+
+</table>

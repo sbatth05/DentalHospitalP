@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DentalHospital.Models.Appointment_Table>
+
+@{
+    ViewBag.Title = "AppointmentRecord";
+}
+
+<h2>Appointment List</h2>
+
+<p>
+    @Html.ActionLink("Book Appointment", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Appointment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Appointment)
+        </td>
+        <td>
+                <sapn class="btn-danger">@Html.ActionLink("Edit", "Edit", new { id = item.id }) </sapn>|
+                <sapn class="btn-warning">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    </sapn>
+</td>
+    </tr>
+}
+
+</table>
+
+<a href="@Url.Action("Right","Login")" class="btn btn-danger">Back to Index</a>
